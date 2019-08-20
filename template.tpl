@@ -554,7 +554,7 @@ const log = require('logToConsole'),
     injectScript = require('injectScript');
 
 
-log('LQM conversion tracking pixel v1.10');
+log('LQM universal pixel v1.10');
 let msg = 'data: ';
 for (let i in data) msg += '\n' + i + ': ' + data[i];
 log(msg);
@@ -575,6 +575,7 @@ function executeWithConsent(callback) {
     if (data.consentType === 'none') {
         callback('', '');
     } else if (data.consentType === 'cmp') {
+        log('requesting cmp for the consent...');
         callInWindow('__cmp', "getConsentData", null, function (val, success) {
             let GDPR = '', GDPR_CONSENT = '';
             if (success) {
