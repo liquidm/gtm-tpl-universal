@@ -1,5 +1,5 @@
 homepage: "https://liquidm.com/",
 documentation: "https://github.com/liquidm/gtm-tpl-universal/wiki",
 versions:
-  - sha: 123abc
+  - sha: 88d82d85536188fdc377c093cc4ae33c278d7640
     changeNotes: Initial Version 
