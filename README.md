@@ -8,11 +8,9 @@ CPC+ campaigns are based on Complete View events. In order to track them add Liq
 
 ### Conversion Tracking
 
-Two attribution models are available for conversion tracking - one is based on campaign/account and the other is based on click token. 
-- Campaign/account model uses 3rd-party cookie to attribute a conversion to the last ad (impression) which was shown to the user. For this option add LiquidM Universal Pixel with the type `Conversion Tracking` and set campaign or account ID to the pages where the conversion happens (e.g. checkout page).
-- Click token model is more precise and requires two pixels to be implemented. For the first step add LiquidM Universal Pixel with the pixel type `Conversion Tracking` and attribution type `Deferred Tracking (1st party cookies)` to all your pages. Then add Pixel with the pixel type `Conversion Tracking` and attribution type `Click token` to the page where the conversion happens (e.g. checkout page). 
+Conversion Tracking requires two pixels to be implemented. For the first step add LiquidM Universal Pixel with the pixel type `Conversion Tracking` and attribution type `Deferred Tracking (1st party cookies)` to all your pages. Then add Pixel with the pixel type `Conversion Tracking` and attribution type `Click token` to the page where the conversion happens (e.g. checkout page). 
 
-Please refer to the LiquidM Platform Guide in your account for further information, use case examples, the description of the attribution models and limitations of each attribution type.
+Please refer to the LiquidM Platform Guide in your account for further information.
 
 ### Retargeting segments
 

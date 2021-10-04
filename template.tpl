@@ -9,7 +9,7 @@ ___INFO___
 
 {
   "displayName": "LiquidM Universal Pixel",
-  "description": "This Pixel allows you to attribute conversions to campaigns and ads, run CPC+ campaigns and build audiences for retargeting. The description of attribution models is available in Platform Guide.",  
+  "description": "This Pixel allows you to attribute conversions to campaigns and ads, run CPC+ campaigns and build audiences for retargeting. The description of attribution models is available in Platform Guide.",
   "categories": ["ATTRIBUTION", "CONVERSION_TRACKING", "REMARKETING"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
@@ -90,14 +90,6 @@ ___TEMPLATE_PARAMETERS___
     "alwaysInSummary": true,
     "selectItems": [
       {
-        "displayValue": "Account (via 3rd party cookie)",
-        "value": "account"
-      },
-      {
-        "displayValue": "Campaign (via 3rd party cookie)",
-        "value": "campaign"
-      },
-      {
         "displayValue": "Deferred Tracking (1st party cookies)",
         "value": "deferred"
       },
@@ -114,54 +106,10 @@ ___TEMPLATE_PARAMETERS___
       }
     ],
     "displayName": "Attribution Type",
-    "defaultValue": "campaign",
+    "defaultValue": "deferred",
     "simpleValueType": true,
     "name": "attributionType",
-    "type": "SELECT",
-    "subParams": [
-      {
-        "notSetText": "Please copy-paste Campaign ID from LiquidM Platform (e.g. 123456)",
-        "clearOnCopy": true,
-        "alwaysInSummary": true,
-        "enablingConditions": [
-          {
-            "paramName": "attributionType",
-            "type": "EQUALS",
-            "paramValue": "campaign"
-          }
-        ],
-        "valueValidators": [
-          {
-            "type": "NON_EMPTY"
-          }
-        ],
-        "displayName": "Campaign ID",
-        "simpleValueType": true,
-        "name": "campaignID",
-        "type": "TEXT"
-      },
-      {
-        "notSetText": "Please copy-paste your Account ID from LiquidM Platform (e.g. 12345)",
-        "clearOnCopy": true,
-        "alwaysInSummary": true,
-        "enablingConditions": [
-          {
-            "paramName": "attributionType",
-            "type": "EQUALS",
-            "paramValue": "account"
-          }
-        ],
-        "valueValidators": [
-          {
-            "type": "NON_EMPTY"
-          }
-        ],
-        "displayName": "Account ID",
-        "simpleValueType": true,
-        "name": "accountID",
-        "type": "TEXT"
-      }
-    ]
+    "type": "SELECT"
   },
   {
     "notSetText": "Please copy-paste the segment token from LiquidM platform",
@@ -607,25 +555,7 @@ function executeWithConsent(callback) {
 }
 
 function executeConversion(gdpr, consent) {
-    if (data.attributionType === 'account') {
-        if (data.accountID && data.conversionID) {
-            firePixel('https://tracking.lqm.io/conversion_event/account/' + encodeUriComponent(data.accountID) + '/t.gif?' +
-                'conversion_id=' + encodeUriComponent(data.conversionID) +
-                '&gdpr=' + encodeUriComponent(gdpr) + '&gdpr_consent=' + encodeUriComponent(consent) + '&cb=' + getTimestamp());
-        } else {
-            log('missing account or conversion ID');
-            data.gtmOnFailure();
-        }
-    } else if (data.attributionType === 'campaign') {
-        if (data.campaignID && data.conversionID) {
-            firePixel('https://tracking.lqm.io/conversion_event/campaign/' + encodeUriComponent(data.campaignID) + '/t.gif?' +
-                'conversion_id=' + encodeUriComponent(data.conversionID) +
-                '&gdpr=' + encodeUriComponent(gdpr) + '&gdpr_consent=' + encodeUriComponent(consent) + '&cb=' + getTimestamp());
-        } else {
-            log('missing campaign or conversion ID');
-            data.gtmOnFailure();
-        }
-    } else if (data.attributionType === 'deferred') {
+    if (data.attributionType === 'deferred') {
         let token = readToken();
         if (token) writeToken(token);
         data.gtmOnSuccess();
