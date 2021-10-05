@@ -9,7 +9,7 @@ ___INFO___
 
 {
   "displayName": "LiquidM Universal Pixel",
-  "description": "This Pixel allows you to attribute conversions to campaigns and ads, run CPC+ campaigns and build audiences for retargeting. The description of attribution models is available in Platform Guide.",
+  "description": "This pixel allows you to attribute conversions to campaigns and ads, run CPC+ campaigns and build audiences for retargeting. The description of attribution models is available in Platform Guide.",
   "categories": ["ATTRIBUTION", "CONVERSION_TRACKING", "REMARKETING"],
   "securityGroups": [],
   "id": "cvt_temp_public_id",
@@ -133,7 +133,7 @@ ___TEMPLATE_PARAMETERS___
     "type": "TEXT"
   },
   {
-    "help": "Select 'Retrieve the Consent from CMP' when you integrated IAB TCF v1 compliant Consent Management Platform (CMP). \nSelect 'Without Consent' if you have obtained the consent in a different form and can limit the execution of the Pixel only to the users who provided the consent.",
+    "help": "Select 'Retrieve the Consent from CMP' when you integrated IAB TCF v1 compliant Consent Management Platform (CMP). \nSelect 'Without Consent' if you have obtained the consent in a different form and can limit the execution of the pixel only to the users who provided the consent.",
     "selectItems": [
       {
         "displayValue": "Without Consent",
