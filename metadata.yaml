@@ -1,5 +1,7 @@
 homepage: "https://liquidm.com/",
 documentation: "https://github.com/liquidm/gtm-tpl-universal/wiki",
 versions:
+  - sha: 0ee72da6c7be80c16bbde866ed2b76e1341bcf21
+    changeNotes: Remove cookie based documentation
   - sha: 739802ed62a5574252fa45cfbd0bb5e37564a4ac
     changeNotes: Initial Version 
