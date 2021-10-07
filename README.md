@@ -8,7 +8,7 @@ CPC+ campaigns are based on complete view events. In order to track them add Liq
 
 ### Conversion Tracking
 
-Conversion Tracking requires two pixels to be implemented. For the first one add LiquidM Universal Pixel with the type `Conversion Tracking` and attribution type `Deferred Tracking (1st party cookies)` to all your pages. The second pixel needs to be added to to the page where the conversion happens (e.g. checkout page). Add a pixel with the type `Conversion Tracking` and attribution type `Click token` to that page.
+Conversion Tracking requires two pixels to be implemented. For the first one add LiquidM Universal Pixel with the type `Conversion Tracking` and attribution type `Deferred Tracking (1st party cookies)` to all your pages. The second pixel needs to be added to the page where the conversion happens (e.g. checkout page). Add a pixel with the type `Conversion Tracking` and attribution type `Click token` to that page.
 
 Please refer to the LiquidM Platform Guide in your account for further information.
 
